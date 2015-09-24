@@ -19810,20 +19810,99 @@ module.exports = require('./lib/React');
 
 },{"./lib/React":29}],157:[function(require,module,exports){
 var React = require('react');
+var QuickSearch = require('./QuickSearch');
+
+var CustomSearchForm = React.createClass({displayName: "CustomSearchForm",
+    render: function () {
+       return React.createElement("form", null, 
+        React.createElement(QuickSearch, null), 
+        React.createElement("button", {className: "btn btn-primary", type: "submit"}, "Search")
+        )
+    }
+})
+
+module.exports = CustomSearchForm
+
+},{"./QuickSearch":158,"react":156}],158:[function(require,module,exports){
+var React = require('react');
+
+var QuickSearch = React.createClass({displayName: "QuickSearch",
+    render: function () {
+        return (
+            React.createElement("div", {className: "form-group"}, 
+                React.createElement("label", null, "Quick Search"), 
+                React.createElement("input", {className: "form-control", type: "text"})
+            )
+        );
+    }
+});
+
+module.exports = QuickSearch;
+
+},{"react":156}],159:[function(require,module,exports){
+var React = require('react');
+
+var SearchResults = React.createClass({displayName: "SearchResults",
+    render: function () {
+        var heads = this.props.columns.map(function (col, index) {
+            return (React.createElement("td", {key: index}, col.name));
+        });
+
+        var rows = this.props.results.map(function (row, ri) {
+
+            var tds = Object.keys(row).map(function (td, ti) {
+                return (React.createElement("td", {key: ti}, row[td]));
+            });
+
+            return (React.createElement("tr", {key: ri}, 
+                tds
+            ));
+        });
+
+        return (React.createElement("table", {className: "table"}, 
+                    React.createElement("thead", null, 
+                        React.createElement("tr", null, heads)
+                    ), 
+                    React.createElement("tbody", null, 
+                        rows
+                    )
+                ));
+    }
+})
+
+module.exports = SearchResults;
+
+},{"react":156}],160:[function(require,module,exports){
+var React = require('react');
+var CustomSearchForm = require('./CustomSearchForm');
+var SearchResults = require('./SearchResults');
+
+var data = {
+    columns: [{name: 'name', visible: 'true'}, {name: 'age', visible: 'true'}, {name: 'sex', visible: 'true'}],
+
+    results: [
+        {name: 'Shaopeng', age: 29, sex: 'M'},
+        {name: 'Jingjing', age: 28, sex: 'F'}
+    ]
+};
 
 var App = React.createClass({displayName: "App",
     render: function () {
-        return React.createElement("h1", null, "My app")
+        return (React.createElement("div", null, 
+            React.createElement("h1", null, "My app"), 
+            React.createElement(CustomSearchForm, null), 
+            React.createElement(SearchResults, {columns: data.columns, results: data.results})
+        ));
     }
 });
 
 module.exports = App;
 
-},{"react":156}],158:[function(require,module,exports){
+},{"./CustomSearchForm":157,"./SearchResults":159,"react":156}],161:[function(require,module,exports){
 var App = require('./components/app');
 
 var React = require('react');
 
 React.render(React.createElement(App, null), document.getElementById('main'));
 
-},{"./components/app":157,"react":156}]},{},[158]);
+},{"./components/app":160,"react":156}]},{},[161]);
