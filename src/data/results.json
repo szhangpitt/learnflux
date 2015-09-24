@@ -1,0 +1,44 @@
+[
+    {
+      "name": "Edna Workman",
+      "gender": "female",
+      "age": 59,
+      "email": "ednaworkman@gluid.com"
+    },
+    {
+      "name": "Rollins Contreras",
+      "gender": "male",
+      "age": 64,
+      "email": "rollinscontreras@gluid.com"
+    },
+    {
+      "name": "Charlotte Bentley",
+      "gender": "female",
+      "age": 27,
+      "email": "charlottebentley@gluid.com"
+    },
+    {
+      "name": "Georgina Juarez",
+      "gender": "female",
+      "age": 53,
+      "email": "georginajuarez@gluid.com"
+    },
+    {
+      "name": "Sheena Morris",
+      "gender": "female",
+      "age": 48,
+      "email": "sheenamorris@gluid.com"
+    },
+    {
+      "name": "Garza Rojas",
+      "gender": "male",
+      "age": 63,
+      "email": "garzarojas@gluid.com"
+    },
+    {
+      "name": "Torres Strickland",
+      "gender": "male",
+      "age": 63,
+      "email": "torresstrickland@gluid.com"
+    }
+]

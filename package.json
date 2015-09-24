@@ -12,11 +12,19 @@
     "flux": "^2.0.3",
     "gulp": "^3.9.0",
     "gulp-babel": "^5.2.0",
-    "react": "^0.13.3"
+    "jquery": "^2.1.4",
+    "q": "^1.4.1",
+    "react": "^0.13.3",
+    "request": "^2.60.0",
+    "request-promise": "^0.4.3"
   },
   "devDependencies": {
     "browserify": "^11.0.1",
+    "gulp-if": "^1.2.5",
+    "gulp-uglify": "^1.2.0",
     "reactify": "^1.1.1",
-    "vinyl-source-stream": "^1.1.0"
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "yargs": "^3.15.0"
   }
 }

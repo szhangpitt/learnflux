@@ -1,6 +1,7 @@
 var React = require('react');
 
 var SearchResults = React.createClass({
+
     render: function () {
         var heads = this.props.columns.map(function (col, index) {
             return (<td key={index}>{col.name}</td>);
